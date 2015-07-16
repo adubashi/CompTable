@@ -11,7 +11,7 @@ class publicCompany():
         self.marketCap = info['MarketCapitalization']
         self.ebitda = info['EBITDA']
         self.eps = info['EPSEstimateCurrentYear']
-        self.PEG = info['PEGRatio']
+        self.PEGRatio = info['PEGRatio']
         self.PERatio = info['PERatio']
         self.PriceBook = info['PriceBook']
         
@@ -21,7 +21,7 @@ class publicCompany():
         self.marketCap = 0;
         self.enterpriseValue = 0;
         self.eps = 0;
-        self.PEG = ""
+        self.PEGRatio = ""
         self.PERatio = ""
         self.PriceBook = ""
         self.getData()
@@ -34,7 +34,7 @@ class publicCompany():
         print 'Ebitda' +  ": " + str(self.ebitda)
         print 'Market Cap' +  ": " + str(self.marketCap)
         print 'EPS estimate current year' +  ": " + str(self.eps)
-        print 'PEG ratio' + ": " + str(self.PEG)
+        print 'PEG ratio' + ": " + str(self.PEGRatio)
         print 'PE ratio' + ": " + str(self.PERatio)
         print 'PriceBook' + ": "+ str(self.PriceBook)
 

@@ -1,4 +1,5 @@
-from pylab import *
+import pylab as plt
+import numpy as np
 import multiples
 
 test = multiples.multiples("AAPL")
@@ -25,11 +26,49 @@ data =(spread, center, flier_high, flier_low)
 '''
 
 
-spread= multipleList[3][1] - multipleList[1][1]
-center = multipleList[2][1]
-flier_high = multipleList[4][1]
-flier_low = multipleList[0][1]
-data = (spread, center, flier_high, flier_low)
 
-# basic plot
-pylab.boxplot(data,0,'rs',0)
+def makeBoxPlot(company):
+    boxes = []
+    totalFigs = 3
+    
+    graphablePElist = []
+    for i in company.PElist:
+        graphablePElist.append(i[1])
+        
+    graphablePEGlist = []
+    for i in company.PEGlist:
+        graphablePEGlist.append(i[1])
+        
+    graphablePriceBookList = []
+    for i in company.PriceBookList:
+        graphablePriceBookList.append(i[1])
+        
+    boxes.append(graphablePElist)
+    boxes.append(graphablePEGlist)
+    boxes.append(graphablePriceBookList)
+        
+        
+        
+    plt.figure()
+    plt.hold = True
+    print graphablePElist
+    plt.boxplot(boxes, vert = 0)
+    plt.title('Equity Value Multiples') 
+    plt.text(13, 3.2, "Price to Book ", bbox=dict(facecolor='red', alpha=0.5))
+    plt.text(13, 2.2, "PEG ratio ", bbox=dict(facecolor='red', alpha=0.5))
+    plt.text(13, 1.3, "PE ratio ", bbox=dict(facecolor='red', alpha=0.5))
+    plt.show()
+
+    
+    '''
+    for i in np.arange(totfigs):    
+        x = np.random.random(50)
+        #plt.subplot('{0}{1}{2}'.format(totfigs,1,i+1))
+        plt.boxplot(x,vert=0)
+    '''
+    '''
+    plt.boxplot(x,vert=0)
+    plt.show()
+    '''
+makeBoxPlot(test)
+    

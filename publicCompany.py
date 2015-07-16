@@ -11,20 +11,50 @@ class publicCompany():
         self.marketCap = info['MarketCapitalization']
         self.ebitda = info['EBITDA']
         self.eps = info['EPSEstimateCurrentYear']
+        #Equity Multiples 
         self.PEGRatio = info['PEGRatio']
         self.PERatio = info['PERatio']
         self.PriceBook = info['PriceBook']
+        #Enterprise Values
+        self.evEBITDA = ""
+        self.evEBIT = "";
+        self.evSales = ""
+        self.evUnleveredCF = "";
+
+
+    def getData2(self):
+        self.sharePrice = 20
+        self.ebitda = 1000000
+        self.marketCap = 100000
+        self.enterpriseValue = 1050000;
+        self.eps = 6
+        #equity multiples
+        self.PEGRatio = "10"
+        self.PERatio = "10"
+        self.PriceBook = "10"
+        #Enterprise Multiples
+        self.evEBITDA = ""
+        self.evEBIT = "";
+        self.evSales = ""
+        self.evUnleveredCF = "";
         
     def __init__(self, ticker):
         self.ticker = ticker
-        self.ebitda = 0;
-        self.marketCap = 0;
-        self.enterpriseValue = 0;
-        self.eps = 0;
+        self.sharePrice = 0
+        self.ebitda = 0
+        self.marketCap = 0
+        self.enterpriseValue = 0
+        self.eps = 0
+        #Equity Multiples
         self.PEGRatio = ""
         self.PERatio = ""
         self.PriceBook = ""
-        self.getData()
+        #EnterpriseValue Multiples
+        self.evEBITDA = ""
+        self.evEBIT = "";
+        self.evSales = ""
+        self.evUnleveredCF = "";
+        self.getData2()
         
         
 
